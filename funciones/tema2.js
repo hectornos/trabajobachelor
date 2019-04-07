@@ -138,4 +138,21 @@ function infor3(){
 }
 //------------------------------------------------
 
+//Resolucion ejercicio 4
+
+function revelar(enlaceId){
+  var inicio= enlaceId.lastIndexOf('_');
+  var fin= enlaceId.length;
+  var parrafo = "contenidos_" + enlaceId.substring(inicio+1,fin);
+  var contenido = document.getElementById(parrafo);
+  if (contenido.style.visibility == 'hidden') {
+    contenido.style.visibility = "visible";
+    document.getElementById(enlaceId).innerHTML="Ocultar contenidos";
+  } else {
+    contenido.style.visibility = "hidden";
+    document.getElementById(enlaceId).innerHTML="Mostrar contenidos";
+  }
+}
+
+//-----------------------
 
