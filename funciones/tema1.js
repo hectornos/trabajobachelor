@@ -42,7 +42,7 @@ function mayor(){
 function cuatro(){
   var numero = prompt('Introduce numero para obtener tabla:');
   document.write(
-    "<table border='1'><tr><td colspan='5'>Tabla del " + numero + "</td></tr>"
+    "<table align='center' border='1'><tr><td colspan='5'>Tabla del " + numero + "</td></tr>"
   )
   for (i=1;i<11;i++){
     document.write("<tr><td>"+numero+"</td><td>*</td><td>"+i+"</td><td>=</td><td>"+(numero*i)+"</td></tr>")
@@ -56,7 +56,7 @@ function cinco(){
   var coloresFondo = {R:'hotpink',A:'lightblue',Y:'lightyellow',V:'lightgreen'};
   var coloresTexto = {R:'red',A:'blue',Y:'yellow',V:'green'};
   document.write(
-    "<table border='1' bgcolor='"+coloresFondo[codFondo]+"' style='color: "+coloresTexto[codTexto]+";' >"
+    "<table align='center' border='1' bgcolor='"+coloresFondo[codFondo]+"' style='color: "+coloresTexto[codTexto]+";' >"
   )
   document.write(
     "<tr><td>Este es el contenido de esta sencilla tabla</td></tr></table>"
@@ -70,7 +70,7 @@ function seis(){
   var arrayNumeros = stringNumeros.split(",");
   //Dibujamos la tabla original
   document.write(
-    "<table border='1'><tr><td colspan='"+stringNumeros.length+"'>Introducidos originalmente</td></tr><tr>"
+    "<table align='center' border='1'><tr><td colspan='"+stringNumeros.length+"'>Introducidos originalmente</td></tr><tr>"
   )
   for (i=0;i<arrayNumeros.length;i++) {
     document.write(
