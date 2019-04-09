@@ -87,7 +87,7 @@ function anadir(){
   var numerito1 = document.getElementById("numerito1").value;
   var array1 = document.getElementById("array1").value.split(",");
   array1.anadir(numerito1);
-  alert('Añadimos un elemento al final' + array1);
+  alert('Añadimos un elemento al final : ' + array1);
 }
 
 function repetido(){
@@ -107,15 +107,15 @@ function anadir2(){
   var array2 = document.getElementById("arrayb").value.split(",");
   let repetido = false;
   for (var i = 0; i< array2.length; i++) {
-    alert(array2[i])
-    alert(numerito2)
+    var valor1 = parseInt(array2[i]);
+    var valor2 = parseInt(numerito2);
     //Recorremos el array y miramos si el elemento existe.
-    if (array[i] === numerito2) {
-      alert('2')
+    if (valor1 === valor2) {
       repetido = true;
     }
   }
 
+  //Si no existe hacemos algo parecido a lo de antes.
   if (!repetido){
 
     Array.prototype.anadir = function (elemento) {
@@ -127,4 +127,55 @@ function anadir2(){
   } else {
     alert('Valor repetido');
   }
+}
+
+
+//Ejercicio 3
+
+
+
+//Ejercicio 4
+
+function ejercicio4(){
+  Array.prototype.sin = function (elemento) {
+    var filtrado = [];
+    for (var i = 0; i < this.length; i++) {
+      if (this[i] !== elemento) {
+        filtrado.push(this[i]);
+      }
+    }
+    return filtrado;
+  }
+  var array = document.getElementById("array").value.split(",");
+  var filtrado = array.sin(document.getElementById("numero").value);
+  alert(filtrado);
+}
+
+
+//Ejercicio 5
+
+function ejercicio5(){
+  //Sobreescribimos la clase object y creamos un método llamado implementa
+  Object.prototype.implementa = function(nombreMetodo) {
+    return this[nombreMetodo] && this[nombreMetodo] instanceof Function;
+  }
+
+  //Objeto con una funcion como parámetro, llamada funcionGuay.
+  var obj1 = {
+    funcionGuay : function () {
+      alert("hola que ase");
+    }
+  };
+
+    //Objeto con una funcion como parámetro, llamada funcionGuay2.
+    var obj2 = {
+      funcionGuay2 : function () {
+        alert("para que quiere saber eso jaaja");
+      }
+    };
+
+    alert("Que el objeto 2 implementa la funcionGuay es " + obj2.implementa("funcionGuay"));
+    alert("Que el objeto 2 implementa la funcionGuay2 es " + obj2.implementa("funcionGuay2"));
+    alert("Que el objeto 1 implementa la funcionGuay es " + obj1.implementa("funcionGuay"));
+    alert("Que el objeto 1 implementa la funcionGuay2 es " + obj1.implementa("funcionGuay2"));
 }

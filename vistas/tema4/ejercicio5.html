@@ -18,7 +18,7 @@
     <div class="container papelillo">
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-          <a class="navbar-brand" href="../../index.html"><img src="../../imagenes/home/navbar/SEAS.png"/>  TO Arquitectura de Software - Ej 4.2</a>
+          <a class="navbar-brand" href="../../index.html"><img src="../../imagenes/home/navbar/SEAS.png"/>  TO Arquitectura de Software - Ej 4.5</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="true" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -67,23 +67,33 @@
     <br>
     <br>
     <div class="d-flex justify-content-center">
-      <div class="row papelillo">
-          <div class="col mx-auto">
-            <div id="grupo1" class="form-group">
-              Array1:<input type="text" class="form-control" id="array1" value="1,2,4" placeholder="Escribe array separado por comas">
-              Array2:<input type="text" class="form-control" id="arrayb" value="31,22,6" placeholder="Escribe array separado por comas">
+      <div class="container papelillo">
+          <p align="center"><strong>SOBREESCRIBIENDO LA CLASE OBJECT:</strong> </p>
+        <p><strong>Sobreescribimos la clase object y creamos un metodo que juzga el nombre de las funciones:</strong> </p>
+        <div style="margin-left:45px" id="grupo1" class="form-group">
+              <p><code>Object.prototype.implementa = function(nombreMetodo) {</code></p>
+                <p><code>  return this[nombreMetodo] && this[nombreMetodo] instanceof Function;</code></p>
+                <p>}</p>
             </div>
-          </div>
+            <p><strong>También tenemos dos objetos con una propiedad que es una funcion con nombre.</strong></p>
+            <div style="margin-left:45px" id="grupo1" class="form-group">
+                <p><code>var obj1 = {</code></p>
+                    <p><code>funcionGuay : function () {</code></p>
+                        <p><code>alert("hola que ase");</code></p>
+                            <p><code> }</code></p>
+                                <p><code>};</code></p>
+            
+                                    <p><code>//Objeto con una funcion como parámetro, llamada funcionGuay2.</code></p>
+                                        <p><code>var obj2 = {</code></p>
+                                            <p><code>funcionGuay2 : function () {</code></p>
+                                                <p><code> alert("para que quiere saber eso jaaja");</code></p>
+                                                    <p><code> }</code></p>
+                                                        <p><code>  };</code></p>
 
-          <div class="col mx-auto">
-              Numerito1:<input type="text" class="form-control" id="numerito1" value="4" placeholder="Escribe numero">
-              Numerito2:<input type="text" class="form-control" id="numerito2" value="3" placeholder="Escribe numero">
-          </div>
-          <div class="col mx-auto">
-            Añadir un elemento al array:
-            <button class="btn btn-primary"><a onclick="anadir()">Añadir Num1!!</a></button>
-            <button class="btn btn-primary"><a onclick="anadir2()">Añadir NUm2!</a></button>
-          </div>
+                                                        <p><strong>Si aprietas el boton verás como funciona.</strong></p>
+            <button class="btn btn-primary"><a onclick="ejercicio5()">Comprobar!!</a></button>
+            
+
           </div>
           </div>
         </div>
