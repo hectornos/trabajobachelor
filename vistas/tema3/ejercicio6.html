@@ -18,7 +18,7 @@
     <div class="container papelillo">
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-          <a class="navbar-brand" href="../../index.html"><img src="../../imagenes/home/navbar/SEAS.png"/>  TO Arquitectura de Software - Ej 3.1</a>
+          <a class="navbar-brand" href="../../index.html"><img src="../../imagenes/home/navbar/SEAS.png"/>  TO Arquitectura de Software - Ej 3.5</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="true" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -66,18 +66,51 @@
     <br>
     <br>
     <br>
-    <div class="container papelillo">
-      <div class="form-group">
-        <label for="texto">Puedes introducir 100 caracteres:</label>
-        <textarea onkeypress="return limita(10)" onkeyup="actualiza(10)" class="form-control" id="texto" rows="7"></textarea>
+    <div class="container">
+      <div class="row">
+          <div class="mx-auto papelillo">
+            <form id="formu" name="formu">
+              DNI:
+                <input type="text" class="form-control" name="dni" value='73202562w' placeholder="12345678A">
+                Intereses:<br>
+                <div id="ch" name="checkgroup">
+                    <input class="form-check-input margin" type="checkbox" value="playstation" name="check1" checked>
+                    <label class="form-check-label margin2" for="check1">Playstation  </label>
+                    <br>
+                    <input class="form-check-input margin" type="checkbox" value="lectura" name="check2">
+                    <label class="form-check-label margin2" for="check2">Lectura      </label>
+                    <br>
+                    <input class="form-check-input margin" type="checkbox" value="futbol" name="check3">
+                    <label class="form-check-label margin2" for="check3">Futbol</label>
+                    <br>
+                    <input class="form-check-input margin" type="checkbox" value="pintura" name="check4" checked>
+                    <label class="form-check-label margin2" for="check4">Pintura</label>
+                    <br>
+                    <input class="form-check-input margin" type="checkbox" value="internet" name="check5">
+                    <label class="form-check-label margin2" for="check5">Internet</label>
+                    <br>
+                    <input class="form-check-input margin" type="checkbox" value="programacion" name="check6">
+                    <label class="form-check-label margin2" for="check6">Programación</label>
+                    <br>
+                  </div>
+                <br>
+                Fecha para empezar:<br>              
+                <input type="date" name="fecha" class="form-control">
+                <br>
+                Escoge al menos dos asignaturas:<br>
+                <label><input class="margin" type="radio" name="asignatura" value="mates">Mates</label><br>
+                <label><input class="margin" type="radio" name="asignatura" value="lengua">Lengua</label><br>
+                <label><input class="margin" type="radio" name="asignatura" value="fisica">Fisica</label><br>
+            </form>  
       </div>
-      <p id="ayuda"></p> 
-      <br>
     </div>
-   
-       
+    
     <br>
+    <div class="d-flex justify-content-center">
+        <button  onclick="validar2()" class="btn btn-primary">Validar!!</button>
+   </div>
    <div class="d-flex justify-content-center">
+
       <a class="btn btn-success" href="unidad3.html" role="button">Volver a Unidad 3</a>
  </div>
     <br>

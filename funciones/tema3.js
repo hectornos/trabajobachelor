@@ -150,4 +150,98 @@ function limita(elEvento, maximoCaracteres) {
         }
       }
 			document.getElementById("contador").innerHTML=dia+"-"+mes+"-"+anio;
+    }
+
+    function funcionCrono(){
+			minutos =0;
+			segundos =0;
+			variable3 = setInterval(funcionCrono2,1000);
 		}
+		function funcionCrono2(){
+			segundos++;
+			if (segundos>59) {
+				segundos = 0;
+				minutos++;
+			}
+
+			document.getElementById("contador2").innerHTML = "Crono: "+minutos + " minutos, " + segundos+ " segundos";
+
+		}
+		function funcionPararCrono(){
+			clearInterval(variable3);
+		}
+		function funcionResetCrono(){
+			minutos=0;
+			segundos=0;
+			clearInterval(variable3);
+			document.getElementById("contador2").innerHTML = "Crono: "+minutos + " minutos, " + segundos+ " segundos";
+		}
+    //Primero comprobamos el formato.
+    var fecha = document.getElementById("fecha").value;
+    var regexp = /^([0-9]{2}-[0-9]{2}-[0-9]{4})$/;
+    booleano = regexp.test(fecha);
+
+
+    //Superformulario
+    function validar2(){
+      valid = false;
+      var checkboxes = document.querySelectorAll("input[type=checkbox]");
+      var formulario = document.getElementById("formu");
+      //DNI tiene que se valido, vale NIE
+      var dni = formulario.dni.value;
+      var regexpDNI = /^[X-x]?[0-9]{8}[a-zA-Z]?$/;
+      valid = regexpDNI.test(dni);
+      //Fecha
+      var fecha = formulario.fecha.value;
+      var fechaEscogida = new Date(fecha);
+      var fechaActual = new Date();
+      //Fecha pasada o sin indicar es negativo.
+      if (fecha == '' || fechaEscogida<fechaActual){
+        valid = false;
+      };
+      //Asignatura
+      var asignatura = formulario.asignatura;
+      var asigEscogida = getAsignatura(asignatura);
+      //Segun la asignatura se necesitan unos u otros intereses.
+      valid = false;
+      switch(asigEscogida) {
+        //Por cada caso detectamos los checkbutons activos del conjunto de 6, y
+        //comprobamos si cada uno que está activo es el indispensable para la asignatura escogida.
+        case 'mates':
+          for (var i=0; i<checkboxes.length;i++){
+            valor = checkboxes[i].checked;     
+            if ((checkboxes[i].checked) && checkboxes[i].value=='playstation') {         
+              valid = true;
+            }   
+          }
+          break;
+        case 'lengua':
+          for (var i=0; i<checkboxes.length;i++){
+            valor = checkboxes[i].checked;     
+            if ((checkboxes[i].checked) && checkboxes[i].value=='lectura') {         
+              valid = true;
+            }   
+          }
+          break;
+        default:
+          for (var i=0; i<checkboxes.length;i++){
+            valor = checkboxes[i].checked;     
+            if ((checkboxes[i].checked) && checkboxes[i].value=='pintura') {         
+              valid = true;
+            }   
+          }
+          break;
+      }
+      alert(valid)
+    }
+
+    function getAsignatura(array){
+      for (i=0; i<array.length; i++) {     
+        valor = array[i].checked;     
+        if (valor == true) {         
+          elegido = array[i];         
+        }     
+      } 
+      pulsado=elegido.value; 
+      return pulsado;
+    }
