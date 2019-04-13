@@ -129,23 +129,60 @@ function anadir2(){
   }
 }
 
-
 //Ejercicio 3
+//Sobreescribimos el metodo para recortar a una longitud...
+
+  String.prototype.recortar = function (longitud) {
+    if (longitud && !isNaN(longitud)) {
+      if (this.length > longitud) {
+        return this.substring(0,longitud);
+      } else {
+        return this;
+      }
+    } 
+  }
+
+  String.prototype.recortar2 = function (longitud, palabra) {
+    if (longitud && !isNaN(longitud)) {
+      if ((this.length - palabra.length) > longitud) {
+        return this.substring(0,longitud-palabra.length)+palabra;
+      } else if (this.length > longitud) {
+        return this.substring(o,longitud);
+      } else {
+        return this;
+      }
+    } 
+  }
 
 
+function ejercicio3a(){
+  var cadena = document.getElementById("texto").value;
+  var longitud = document.getElementById("long").value;
+  var resultado = cadena.recortar(longitud);
+  document.getElementById("res").value=resultado;
+}
+
+function ejercicio3b(){
+  var cadena2 = document.getElementById("texto2").value;
+  var longitud2 = document.getElementById("long2").value;
+  var palabra = document.getElementById("pal").value;
+  var resultado2 = cadena2.recortar2(longitud2,palabra);
+  document.getElementById("res2").value=resultado2;
+}
 
 //Ejercicio 4
 
-function ejercicio4(){
-  Array.prototype.sin = function (elemento) {
-    var filtrado = [];
-    for (var i = 0; i < this.length; i++) {
-      if (this[i] !== elemento) {
-        filtrado.push(this[i]);
-      }
+Array.prototype.sin = function (elemento) {
+  var filtrado = [];
+  for (var i = 0; i < this.length; i++) {
+    if (this[i] !== elemento) {
+      filtrado.push(this[i]);
     }
-    return filtrado;
   }
+  return filtrado;
+}
+
+function ejercicio4(){
   var array = document.getElementById("array").value.split(",");
   var filtrado = array.sin(document.getElementById("numero").value);
   alert(filtrado);
@@ -154,12 +191,13 @@ function ejercicio4(){
 
 //Ejercicio 5
 
-function ejercicio5(){
+
   //Sobreescribimos la clase object y creamos un método llamado implementa
   Object.prototype.implementa = function(nombreMetodo) {
     return this[nombreMetodo] && this[nombreMetodo] instanceof Function;
   }
 
+function ejercicio5(){
   //Objeto con una funcion como parámetro, llamada funcionGuay.
   var obj1 = {
     funcionGuay : function () {
@@ -179,3 +217,4 @@ function ejercicio5(){
     alert("Que el objeto 1 implementa la funcionGuay es " + obj1.implementa("funcionGuay"));
     alert("Que el objeto 1 implementa la funcionGuay2 es " + obj1.implementa("funcionGuay2"));
 }
+
