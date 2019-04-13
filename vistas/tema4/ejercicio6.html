@@ -63,52 +63,16 @@
       </div>
     </nav>
   </div>
-    <br>
-    <br>
-    <br>
-    <div class="d-flex justify-content-center">
-      <div class="container papelillo">
-          <p align="center"><strong>SOBREESCRIBIENDO LA CLASE OBJECT:</strong> </p>
-        <p><strong>Sobreescribimos la clase object y creamos un metodo que juzga el nombre de las funciones:</strong> </p>
-        <div style="margin-left:45px" id="grupo1" class="form-group">
-              <p><code>Object.prototype.implementa = function(nombreMetodo) {</code></p>
-                <p><code>  return this[nombreMetodo] && this[nombreMetodo] instanceof Function;</code></p>
-                <p>}</p>
-            </div>
-            <p><strong>También tenemos dos objetos con una propiedad que es una funcion con nombre.</strong></p>
-            <div style="margin-left:45px" id="grupo1" class="form-group">
-                <p><code>var obj1 = {</code></p>
-                    <p><code>funcionGuay : function () {</code></p>
-                        <p><code>alert("hola que ase");</code></p>
-                            <p><code> }</code></p>
-                                <p><code>};</code></p>
-            
-                                    <p><code>//Objeto con una funcion como parámetro, llamada funcionGuay2.</code></p>
-                                        <p><code>var obj2 = {</code></p>
-                                            <p><code>funcionGuay2 : function () {</code></p>
-                                                <p><code> alert("para que quiere saber eso jaaja");</code></p>
-                                                    <p><code> }</code></p>
-                                                        <p><code>  };</code></p>
+  <br>
+  <br>
+  <br>
 
-                                                        <p><strong>Si aprietas el boton verás como funciona.</strong></p>
-            <button class="btn btn-primary"><a onclick="ejercicio5()">Comprobar!!</a></button>
-            
-
-          </div>
-          </div>
-        </div>
-      </form>
-     
-    </div>
-   
-       
-    <br>
-   <div class="d-flex justify-content-center">
-      <a class="btn btn-success" href="unidad4.html" role="button">Volver a Unidad 4</a>
+    <div class="d-flex justify-content-center arriba">
+        <button class="btn btn-info" onclick='verheader()'>Ver header</button>
+   </div>
+   <div class="d-flex justify-content-center abajo">
+      <button class="btn btn-success" onclick='verfooter()'>Ver Footer</button>
  </div>
-    <br>
-    <br>
-
     <!-- Parte de footer -->
     <footer class="py-1 bg-dark fixed-bottom">
       <div class="container">

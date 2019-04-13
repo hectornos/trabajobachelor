@@ -13,3 +13,13 @@
 .margin2 {
   margin-left: 30px;
 }
+
+.arriba {
+  position: relative;
+  bottom: 10%;
+}
+
+.abajo {
+  position: relative;
+  bottom: 90%;
+}

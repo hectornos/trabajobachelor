@@ -218,3 +218,19 @@ function ejercicio5(){
     alert("Que el objeto 1 implementa la funcionGuay2 es " + obj1.implementa("funcionGuay2"));
 }
 
+
+//PARTE DE AJAX
+
+function verfooter(){
+  alert('holaaa')
+  var ajaxReq = new XMLHttpRequest();
+  ajaxReq.onreadystatechange = function (){
+    if (ajaxReq.readyState == 4 && ajaxReq.status == 200){
+      document.getElementById("info").innerHTML = ajaxReq.responseText;
+    }
+  }
+  //La respuesta que se quiere visualizar en info es la siguietne.
+  ajaxReq.open("GET","hola.txt",true);
+  ajaxReq.send();
+}
+
