@@ -222,15 +222,26 @@ function ejercicio5(){
 //PARTE DE AJAX
 
 function verfooter(){
-  alert('holaaa')
   var ajaxReq = new XMLHttpRequest();
   ajaxReq.onreadystatechange = function (){
     if (ajaxReq.readyState == 4 && ajaxReq.status == 200){
-      document.getElementById("info").innerHTML = ajaxReq.responseText;
+      document.getElementById("footer").innerHTML = ajaxReq.responseText;
     }
   }
   //La respuesta que se quiere visualizar en info es la siguietne.
-  ajaxReq.open("GET","hola.txt",true);
+  ajaxReq.open("GET","../templates/footer.html",true);
+  ajaxReq.send();
+}
+
+function verheader(){
+  var ajaxReq = new XMLHttpRequest();
+  ajaxReq.onreadystatechange = function (){
+    if (ajaxReq.readyState == 4 && ajaxReq.status == 200){
+      document.getElementById("header").innerHTML = ajaxReq.responseText;
+    }
+  }
+  //La respuesta que se quiere visualizar en info es la siguietne.
+  ajaxReq.open("GET","../templates/header.html",true);
   ajaxReq.send();
 }
 
